@@ -1,0 +1,4 @@
+obj\Debug\net6.0/ClientData.cs \
+obj\Debug\net6.0/ClientDataGrpc.cs: C:/Users/afrey/.nuget/packages/grpc.tools/2.43.0/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/afrey/.nuget/packages/grpc.tools/2.43.0/build/native/include/google/protobuf/empty.proto\
+ C:/Development/SteelCloudLLC/SteelCloud.ConfigOS.Protos/v1/client_data.proto

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "b8PvkUoKufkEpl+Z+y8JmzVrRe7XLmSJrwE7ZYVqehmv20npLC3K89+9m0N1FBrXDHfllULWlKq7rPqPu5/Qtg==",
+  "success": true,
+  "projectFilePath": "C:\\Development\\SCLD-AFrey\\SteelCloud.ConfigOS.Proto.Test\\SteelCloud.ConfigOS.Proto.Test.Client\\SteelCloud.ConfigOS.Proto.Test.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\afrey\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc\\2.43.0\\grpc.2.43.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc.core\\2.43.0\\grpc.core.2.43.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc.core.api\\2.43.0\\grpc.core.api.2.43.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc.net.client\\2.40.0\\grpc.net.client.2.40.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc.net.common\\2.40.0\\grpc.net.common.2.40.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\grpc.tools\\2.43.0\\grpc.tools.2.43.0.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\afrey\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

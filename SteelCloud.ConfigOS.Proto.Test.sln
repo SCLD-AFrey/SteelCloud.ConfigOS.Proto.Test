@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelCloud.ConfigOS.Proto.Test.Client", "SteelCloud.ConfigOS.Proto.Test.Client\SteelCloud.ConfigOS.Proto.Test.Client.csproj", "{8822ED76-7625-4546-A81A-89E5A2CCB366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelCloud.ConfigOS.Proto.Test.Server", "SteelCloud.ConfigOS.Proto.Test.Server\SteelCloud.ConfigOS.Proto.Test.Server.csproj", "{A0D4E50C-B3EA-4F9A-9FB8-BA4935140F14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8822ED76-7625-4546-A81A-89E5A2CCB366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8822ED76-7625-4546-A81A-89E5A2CCB366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8822ED76-7625-4546-A81A-89E5A2CCB366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8822ED76-7625-4546-A81A-89E5A2CCB366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D4E50C-B3EA-4F9A-9FB8-BA4935140F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D4E50C-B3EA-4F9A-9FB8-BA4935140F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D4E50C-B3EA-4F9A-9FB8-BA4935140F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D4E50C-B3EA-4F9A-9FB8-BA4935140F14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
