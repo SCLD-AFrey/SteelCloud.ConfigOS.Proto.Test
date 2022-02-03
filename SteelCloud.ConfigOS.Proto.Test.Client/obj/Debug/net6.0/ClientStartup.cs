@@ -69,8 +69,11 @@ namespace SteelCloud.ConfigOS.Protos {
             "ZC5jb25maWdvcy5jbGllbnQuc3RhcnR1cC52MS5HX0xpY2Vuc2VSZXNwb25z",
             "ZRJfCgdHZXRUcmVlEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gjwuc3RlZWxj",
             "bG91ZC5jb25maWdvcy5jbGllbnQuc3RhcnR1cC52MS5HX0dldFRyZWVEYXRh",
-            "UmVzcG9uc2VCHaoCGlN0ZWVsQ2xvdWQuQ29uZmlnT1MuUHJvdG9zYgZwcm90",
-            "bzM="));
+            "UmVzcG9uc2UymwEKGENsaWVudFN0YXJ0dXBTZXJ2aWNlVGVzdBJ/ChBDaGVj",
+            "a0NyZWRlbnRpYWxzEjQuc3RlZWxjbG91ZC5jb25maWdvcy5jbGllbnQuc3Rh",
+            "cnR1cC52MS5HX0F1dGhSZXF1ZXN0GjUuc3RlZWxjbG91ZC5jb25maWdvcy5j",
+            "bGllbnQuc3RhcnR1cC52MS5HX0F1dGhSZXNwb25zZUIdqgIaU3RlZWxDbG91",
+            "ZC5Db25maWdPUy5Qcm90b3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

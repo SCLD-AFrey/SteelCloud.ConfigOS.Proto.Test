@@ -16,9 +16,9 @@ namespace SteelCloud.ConfigOS.Proto.Test.Server
     public class Program
     {
         const int Port = 30051;
-        private static UserMgmt _userMgmt = new UserMgmt();
-        private static readonly JwtSecurityTokenHandler m_jwtTokenHandler = new JwtSecurityTokenHandler();
-        private static readonly SymmetricSecurityKey m_securityKey = new SymmetricSecurityKey(Guid.NewGuid().ToByteArray());
+        private static readonly UserMgmt UserMgmt = new UserMgmt();
+        private static readonly JwtSecurityTokenHandler JwtTokenHandler = new JwtSecurityTokenHandler();
+        private static readonly SymmetricSecurityKey SecurityKey = new SymmetricSecurityKey(Guid.NewGuid().ToByteArray());
 
         public static void Main(string[] args)
         {
@@ -77,7 +77,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Server
             {
                 public override Task<G_AuthResponse> CheckCredentials(G_AuthRequest request, ServerCallContext context)
                 {
-                    var repo = _userMgmt.UserRepo();
+                    var repo = UserMgmt.UserRepo();
                     var authUser = repo.FirstOrDefault(o => o.Username == request.Username && o.Password == request.Password);
 
                     List<Claim> claims = new List<Claim>();
@@ -90,7 +90,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Server
                         {
                             claims.Add(new Claim(ClaimTypes.Role, role.ToString()));
                         }
-                        var credentials = new SigningCredentials(m_securityKey, SecurityAlgorithms.HmacSha256);
+                        var credentials = new SigningCredentials(SecurityKey, SecurityAlgorithms.HmacSha256);
                         var token = new JwtSecurityToken(
                             "BroadcastServer",
                             "ExampleClients",
@@ -98,7 +98,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Server
                             expires: DateTime.Now.AddSeconds(60),
                             signingCredentials: credentials);
 
-                        var reply = new G_AuthSuccess{BearerToken = m_jwtTokenHandler.WriteToken(token)};
+                        var reply = new G_AuthSuccess{BearerToken = JwtTokenHandler.WriteToken(token)};
                         foreach (var claim in claims)
                         {
                             if (claim.Type == ClaimTypes.Role)

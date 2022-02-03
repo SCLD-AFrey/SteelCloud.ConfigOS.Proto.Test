@@ -15,29 +15,28 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
         private static string address = "127.0.0.1:30051";
         private static bool _isAuth = false;
         private static string _bearerToken = String.Empty;
-        private static GrpcChannel _authChannel;
-
         
         public static async Task Main(string[] args)
         {
             //DO Authorization
             while (_isAuth == false)
-            {            
-                Channel channel = new Channel(address, ChannelCredentials.Insecure);
-                var client = new ClientStartupService.ClientStartupServiceClient(channel);
+            {
                 Console.Write("Username: ");
                 var username = Console.ReadLine();
                 Console.Write("Password: ");
                 var password = Console.ReadLine();
+                
+                Channel channel = ChannelUtils.CreateInsecureChannel(address);
+                var client = new ClientStartupService.ClientStartupServiceClient(channel);
                 await DoAuthentication(username, password, client);
             }
 
             //DO Client Data
             if (_isAuth)
             {
-                _authChannel = CreateAuthChannel(_bearerToken);
-                var authClientDataServiceClient = new ClientDataService.ClientDataServiceClient(_authChannel);
-                var authClientStartupServiceClient = new ClientStartupService.ClientStartupServiceClient(_authChannel);
+                var authChannel = ChannelUtils.CreateAuthChannel(_bearerToken, address);
+                var authClientDataServiceClient = new ClientDataService.ClientDataServiceClient(authChannel);
+                var authClientStartupServiceClient = new ClientStartupService.ClientStartupServiceClient(authChannel);
 
                 Console.WriteLine("1. GetTreeItemData - Endpoint");
                 Console.WriteLine("2. GetTreeItemData - Group");
@@ -49,12 +48,10 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
                 Console.WriteLine("7. GetLicenseState");
                 Console.WriteLine("8. GetTree");
                 Console.WriteLine("X. Quit");
-                
-                
+
                 var input = new ConsoleKeyInfo();
                 while (input.Key != ConsoleKey.X)
                 {
-                    
                     input = Console.ReadKey();
                     switch (input.Key)
                     {
@@ -74,8 +71,6 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
                             Console.WriteLine(" - BeginEdit - Group");
                             await DoBeginEdit(authClientDataServiceClient, DataRequestType.Group);
                             break;
-                        
-                        
                         case ConsoleKey.D5:
                             Console.WriteLine(" - CheckServerConnection");
                             await DoCheckServerConnection(authClientStartupServiceClient);
@@ -98,7 +93,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
                     }
                 }
 
-                _authChannel.ShutdownAsync().Wait();
+                authChannel.ShutdownAsync().Wait();
             }
             Console.ReadKey();
         }
@@ -125,7 +120,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
             var reply = client.GetTree(new Empty());
         }
         
-        private static async Task DoAuthentication(string pUser, string pPass, ClientStartupService.ClientStartupServiceClient client)
+        private static async Task DoAuthentication(string? pUser, string? pPass, ClientStartupService.ClientStartupServiceClient client)
         {
             if (pUser == null) throw new ArgumentNullException(nameof(pUser));
             if (pPass == null) throw new ArgumentNullException(nameof(pPass));
@@ -165,8 +160,8 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
                     request.Grouprequest = new G_GetGroupRequest(){ };
                     break;
             }
+            var reply = client.GetTreeItemData(request);
         }
-
         private static async Task DoBeginEdit(ClientDataService.ClientDataServiceClient client, DataRequestType type)
         {
             var request = new G_EditRequest()
@@ -185,22 +180,5 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
             var reply = await client.BeginEditAsync(request);
         }
 
-        private static GrpcChannel CreateAuthChannel(string? p_token)
-        {
-            var credentials = CallCredentials.FromInterceptor((context, metadata) =>
-            {
-                if (!string.IsNullOrEmpty(p_token))
-                {
-                    metadata.Add("Authorization", $"Bearer {p_token}");
-                }
-                return Task.CompletedTask;
-            });
-
-            var channel = GrpcChannel.ForAddress($"https://{address}", new GrpcChannelOptions
-            {
-                Credentials = ChannelCredentials.Create(new SslCredentials(), credentials)
-            });
-            return channel;
-        }
     }
 }
