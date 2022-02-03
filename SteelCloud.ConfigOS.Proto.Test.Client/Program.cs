@@ -101,7 +101,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
 
         private static async Task DoCheckServerConnection(ClientStartupService.ClientStartupServiceClient client)
         {
-            var reply = client.CheckServerConnection(new Empty());
+            var reply = await client.CheckServerConnectionAsync(new Empty());
         }
         private static async Task DoCheckAssociation(ClientStartupService.ClientStartupServiceClient client)
         {
@@ -109,15 +109,15 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
             {
                 Pubkey = ByteString.CopyFrom("TEST STRING", Encoding.Unicode)
             };
-            var reply = client.CheckAssociation(request);
+            var reply = await client.CheckAssociationAsync(request);
         }
         private static async Task DoGetLicenseState(ClientStartupService.ClientStartupServiceClient client)
         {
-            var reply = client.GetLicenseState(new Empty());
+            var reply = await client.GetLicenseStateAsync(new Empty());
         }
         private static async Task DoGetTree(ClientStartupService.ClientStartupServiceClient client)
         {
-            var reply = client.GetTree(new Empty());
+            var reply = await client.GetTreeAsync(new Empty());
         }
         
         private static async Task DoAuthentication(string? pUser, string? pPass, ClientStartupService.ClientStartupServiceClient client)
@@ -130,7 +130,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
             {
                 Username = pUser, Password = pPass
             };
-            var reply = client.CheckCredentials(request);
+            var reply = await client.CheckCredentialsAsync(request);
                 
             if (reply.ResponseCase == G_AuthResponse.ResponseOneofCase.Success)
             {
@@ -160,7 +160,7 @@ namespace SteelCloud.ConfigOS.Proto.Test.Client
                     request.Grouprequest = new G_GetGroupRequest(){ };
                     break;
             }
-            var reply = client.GetTreeItemData(request);
+            var reply = await client.GetTreeItemDataAsync(request);
         }
         private static async Task DoBeginEdit(ClientDataService.ClientDataServiceClient client, DataRequestType type)
         {

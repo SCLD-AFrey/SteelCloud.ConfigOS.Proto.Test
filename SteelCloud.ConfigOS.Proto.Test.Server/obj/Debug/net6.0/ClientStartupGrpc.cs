@@ -46,19 +46,27 @@ namespace SteelCloud.ConfigOS.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_AuthRequest> __Marshaller_steelcloud_configos_client_startup_v1_G_AuthRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_AuthRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_AuthResponse> __Marshaller_steelcloud_configos_client_startup_v1_G_AuthResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_AuthResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_PairCheckRequest> __Marshaller_steelcloud_configos_client_startup_v1_G_PairCheckRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_PairCheckRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_PairCheckResponse> __Marshaller_steelcloud_configos_client_startup_v1_G_PairCheckResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_PairCheckResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_AuthRequest> __Marshaller_steelcloud_configos_client_startup_v1_G_AuthRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_AuthRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_AuthResponse> __Marshaller_steelcloud_configos_client_startup_v1_G_AuthResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_AuthResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_LicenseResponse> __Marshaller_steelcloud_configos_client_startup_v1_G_LicenseResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_LicenseResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SteelCloud.ConfigOS.Protos.G_GetTreeDataResponse> __Marshaller_steelcloud_configos_client_startup_v1_G_GetTreeDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SteelCloud.ConfigOS.Protos.G_GetTreeDataResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse> __Method_CheckCredentials = new grpc::Method<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CheckCredentials",
+        __Marshaller_steelcloud_configos_client_startup_v1_G_AuthRequest,
+        __Marshaller_steelcloud_configos_client_startup_v1_G_AuthResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Google.Protobuf.WellKnownTypes.Empty> __Method_CheckServerConnection = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Google.Protobuf.WellKnownTypes.Empty>(
@@ -75,14 +83,6 @@ namespace SteelCloud.ConfigOS.Protos {
         "CheckAssociation",
         __Marshaller_steelcloud_configos_client_startup_v1_G_PairCheckRequest,
         __Marshaller_steelcloud_configos_client_startup_v1_G_PairCheckResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse> __Method_CheckCredentials = new grpc::Method<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "CheckCredentials",
-        __Marshaller_steelcloud_configos_client_startup_v1_G_AuthRequest,
-        __Marshaller_steelcloud_configos_client_startup_v1_G_AuthResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::SteelCloud.ConfigOS.Protos.G_LicenseResponse> __Method_GetLicenseState = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::SteelCloud.ConfigOS.Protos.G_LicenseResponse>(
@@ -111,6 +111,12 @@ namespace SteelCloud.ConfigOS.Protos {
     public abstract partial class ClientStartupServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::SteelCloud.ConfigOS.Protos.G_AuthResponse> CheckCredentials(global::SteelCloud.ConfigOS.Protos.G_AuthRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> CheckServerConnection(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -118,12 +124,6 @@ namespace SteelCloud.ConfigOS.Protos {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::SteelCloud.ConfigOS.Protos.G_PairCheckResponse> CheckAssociation(global::SteelCloud.ConfigOS.Protos.G_PairCheckRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SteelCloud.ConfigOS.Protos.G_AuthResponse> CheckCredentials(global::SteelCloud.ConfigOS.Protos.G_AuthRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -148,9 +148,9 @@ namespace SteelCloud.ConfigOS.Protos {
     public static grpc::ServerServiceDefinition BindService(ClientStartupServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_CheckCredentials, serviceImpl.CheckCredentials)
           .AddMethod(__Method_CheckServerConnection, serviceImpl.CheckServerConnection)
           .AddMethod(__Method_CheckAssociation, serviceImpl.CheckAssociation)
-          .AddMethod(__Method_CheckCredentials, serviceImpl.CheckCredentials)
           .AddMethod(__Method_GetLicenseState, serviceImpl.GetLicenseState)
           .AddMethod(__Method_GetTree, serviceImpl.GetTree).Build();
     }
@@ -162,17 +162,17 @@ namespace SteelCloud.ConfigOS.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ClientStartupServiceBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_CheckCredentials, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse>(serviceImpl.CheckCredentials));
       serviceBinder.AddMethod(__Method_CheckServerConnection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.CheckServerConnection));
       serviceBinder.AddMethod(__Method_CheckAssociation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SteelCloud.ConfigOS.Protos.G_PairCheckRequest, global::SteelCloud.ConfigOS.Protos.G_PairCheckResponse>(serviceImpl.CheckAssociation));
-      serviceBinder.AddMethod(__Method_CheckCredentials, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse>(serviceImpl.CheckCredentials));
       serviceBinder.AddMethod(__Method_GetLicenseState, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::SteelCloud.ConfigOS.Protos.G_LicenseResponse>(serviceImpl.GetLicenseState));
       serviceBinder.AddMethod(__Method_GetTree, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::SteelCloud.ConfigOS.Protos.G_GetTreeDataResponse>(serviceImpl.GetTree));
     }
 
   }
-  public static partial class ClientStartupServiceTest
+  public static partial class ClientAuthService
   {
-    static readonly string __ServiceName = "steelcloud.configos.client.startup.v1.ClientStartupServiceTest";
+    static readonly string __ServiceName = "steelcloud.configos.client.startup.v1.ClientAuthService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -226,9 +226,9 @@ namespace SteelCloud.ConfigOS.Protos {
       get { return global::SteelCloud.ConfigOS.Protos.ClientStartupReflection.Descriptor.Services[1]; }
     }
 
-    /// <summary>Base class for server-side implementations of ClientStartupServiceTest</summary>
-    [grpc::BindServiceMethod(typeof(ClientStartupServiceTest), "BindService")]
-    public abstract partial class ClientStartupServiceTestBase
+    /// <summary>Base class for server-side implementations of ClientAuthService</summary>
+    [grpc::BindServiceMethod(typeof(ClientAuthService), "BindService")]
+    public abstract partial class ClientAuthServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::SteelCloud.ConfigOS.Protos.G_AuthResponse> CheckCredentials(global::SteelCloud.ConfigOS.Protos.G_AuthRequest request, grpc::ServerCallContext context)
@@ -241,7 +241,7 @@ namespace SteelCloud.ConfigOS.Protos {
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(ClientStartupServiceTestBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(ClientAuthServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CheckCredentials, serviceImpl.CheckCredentials).Build();
@@ -252,7 +252,7 @@ namespace SteelCloud.ConfigOS.Protos {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, ClientStartupServiceTestBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, ClientAuthServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CheckCredentials, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SteelCloud.ConfigOS.Protos.G_AuthRequest, global::SteelCloud.ConfigOS.Protos.G_AuthResponse>(serviceImpl.CheckCredentials));
     }
